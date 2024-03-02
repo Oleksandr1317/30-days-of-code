@@ -12,7 +12,7 @@ const countries = [
     "Kenya"
   ];
   
-  const webTechs = [
+const webTechs = [
     "HTML",
     "CSS",
     "JavaScript",
@@ -22,13 +22,15 @@ const countries = [
     "MongoDB"
   ];
   
-  const mernStack = ["MongoDB", "Express", "React", "Node"];
+const mernStack = ["MongoDB", "Express", "React", "Node"];
 
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 let randomCount = Math.floor((Math.random() * 20)) + 1;
 
 let randID = '';
+
+let i; 
 
 for (i = 0; i < randomCount; i++){
     randID += characters.charAt(Math.floor(Math.random() * characters.length));
@@ -75,7 +77,7 @@ console.log(` `);
 console.log(`TASK 6`);
 let countriesInfo = [];
 
-for (let i = 0; i < countries.length; i++) {
+for (i = 0; i < countries.length; i++) {
     let country = countries[i];
     let abbreviation = country.slice(0, 3).toUpperCase();
     let length = country.length;
@@ -84,11 +86,11 @@ for (let i = 0; i < countries.length; i++) {
 
 console.log(countriesInfo);
 
-// task 7
+// task 7-8
 console.log(` `)
 let countriesWithLand = [];
 
-for (let i = 0; i < countries.length; i++) {
+for (i = 0; i < countries.length; i++) {
     if (countries[i].toLowerCase().includes('land')) {
         countriesWithLand.push(countries[i]);
     }
@@ -103,7 +105,7 @@ if (countriesWithLand.length > 0) {
 console.log(` `)
 let countriesEndingWithIA = [];
 
-for (let i = 0; i < countries.length; i++) {
+for (i = 0; i < countries.length; i++) {
     if (countries[i].toLowerCase().endsWith('ia')) {
         countriesEndingWithIA.push(countries[i]);
     }
@@ -112,5 +114,81 @@ for (let i = 0; i < countries.length; i++) {
 if (countriesEndingWithIA.length > 0) {
     console.log(countriesEndingWithIA);
 } else {
-    console.log("Эти страны заканчиваются без ia");
+    console.log("Without ia");
+}
+
+// task 9
+console.log(` `);
+console.log(`TASK 9`);
+let longestCountry = countries[0];
+for (i = 1; i < countries.length; i++) {
+    if (countries[i].length > longestCountry.length) {
+        longestCountry = countries[i];
+    }
+}
+console.log(longestCountry);
+
+// task 10
+console.log(` `);
+console.log(`TASK 10`);
+let longestCountry1 = [];
+for (i = 0; i < countries.length;i++) {
+    if (countries[i].length == 5) {
+        longestCountry1.push(countries[i]);
+    }
+}
+console.log(longestCountry1);
+
+// TASK 11
+console.log(` `);
+console.log(`TASK 11`);
+let longestCountry2 = webTechs[0];
+for(i = 1; i < webTechs.length;i++) {
+    if(webTechs[i].length > longestCountry2.length) {
+        longestCountry2 = webTechs[i];
+    }
+}
+console.log(longestCountry2);
+
+// TASK 12
+console.log(` `);
+console.log(`TASK 12`);
+let outsideArray = [];
+for (let i = 0; i < webTechs.length; i++) {
+    let tech = webTechs[i];
+    let techLength = tech.length;
+    let insideArray = [tech, techLength];
+    outsideArray.push(insideArray);
+}
+console.log(outsideArray);
+
+
+// TASK 13
+console.log(` `);
+console.log(`TASK 13`)
+for (let subject of webTechs) {
+    console.log(subject);
+}
+
+// TASK 14
+console.log(` `);
+console.log(`TASK 14`);
+const fruits = ['banana','orange','mango','lemon'];
+const afterChange = [];
+for (i = fruits.length - 1;i >= 0;i--){
+    afterChange.push(fruits[i]);
+}
+console.log(afterChange);
+
+// TASK 15
+console.log(` `);
+console.log(`TASK 15`);
+const fullStack = [
+    ["HTML", "CSS", "JS", "React"],
+    ["Node", "Express", "MongoDB"]
+  ];
+for(let object of fullStack) {
+    for ( let subject of object){
+        console.log(subject.toUpperCase());
+    }
 }
