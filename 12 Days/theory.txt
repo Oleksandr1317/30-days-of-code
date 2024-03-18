@@ -1,0 +1,82 @@
+-- Flags --
+g: глобальний прапор, який означає пошук шаблону у всьому тексті
+i: прапорець без урахування регістру (він шукає як малі, так і великі літери)
+м: багаторядковий
+
+--- Створення шаблону без конструктора RegExp ---
+let regEx= /love/gi == let regEx= new RegExp('love','gi')
+
+--- Методи об’єктів RegExpp ---
+test() : перевіляє збіги
+
+const str = 'I love JavaScript'
+const pattern = /love/
+const result = pattern.test(str)
+console.log(result) // TRUE
+
+match() : повертає масив, що містить усі збіги, включаючи групи захоплення, або null, якщо збігів не знайдено. 
+Якщо ми не використовуємо глобальний прапор, match() повертає масив, що містить шаблон, індекс, вхідні дані та групу.
+
+const str = 'I love JavaScript'
+const pattern = /love/
+const result = str.match(pattern)
+console.log(result) // ["love", index: 2, input: "I love JavaScript", groups: undefined]
+
+const str = 'I love JavaScript'
+const pattern = /love/g
+const result = str.match(pattern)
+console.log(result) // ["love"]
+
+search() : перевіряє збіг у рядку. Він повертає індекс відповідності або -1, якщо пошук не вдається.
+
+const str = 'I love JavaScript'
+const pattern = /love/g
+const result = str.search(pattern)
+console.log(result) // 2
+
+replace() : виконує пошук збігу в рядку та замінює відповідний підрядок підрядком заміни.
+
+const txt = 'Python is the most beautiful language that a human begin has ever created.\
+I recommend python for a first programming language'
+matchReplaced = txt.replace(/Python|python/, 'JavaScript')
+console.log(matchReplaced) // JavaScript is the most beautiful language that a human begin has ever created.I recommend python for a first programming language
+
+const txt = 'Python is the most beautiful language that a human begin has ever created.\
+I recommend python for a first programming language'
+matchReplaced = txt.replace(/Python|python/g, 'JavaScript')
+console.log(matchReplaced) // JavaScript is the most beautiful language that a human begin has ever created.I recommend JavaScript for a first programming language
+
+
+[]: набір символів
+[ac] означає a або b або c
+[az] означає будь-яку літеру від a до z
+[AZ] означає будь-який символ від A до Z
+[0-3] означає 0, 1, 2 або 3
+[0-9] означає будь-яке число від 0 до 9
+[A-Za-z0-9] будь-який символ від a до z, від A до Z, від 0 до 9
+\: використовується для екранування спеціальних символів
+\d означає: відповідність, якщо рядок містить цифри (числа від 0 до 9)
+\D означає: збіг, якщо рядок не містить цифр
+. : будь-який символ, крім символу нового рядка (\n)
+^: починається з
+r'^підрядок' наприклад r'^love', речення, яке починається зі слова love
+r'[^abc] означає не a, не b, не c.
+$: закінчується на
+r'substring$' наприклад r'love$', речення закінчується словом love
+*: нуль або більше разів
+r'[a]*' означає необов'язковий або може зустрічатися багато разів.
++: один або кілька разів
+r'[a]+' означає принаймні один або кілька разів
+?: нуль або один раз
+r'[a]?' означає нуль разів або один раз
+\b: межа слова, збігається з початком або кінцем слова
+{3}: рівно 3 символи
+{3,}: щонайменше 3 символи
+{3,8}: від 3 до 8 символів
+|: Або або
+r'apple|banana' означає або яблуко, або банан
+(): захоплення та групування
+
+
+
+
