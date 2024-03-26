@@ -1,0 +1,66 @@
+Щоб добре зрозуміти обіцянку, давайте спочатку розберемося зі зворотним викликом. 
+Давайте подивимося на наступні зворотні виклики. З наступних блоків коду ви помітите різницю між зворотним викликом і обіцянками.
+
+call back Давайте розглянемо функцію зворотного виклику, яка може приймати два параметри. Перший параметр - помилка,
+ а другий - результат. Якщо параметр err false, помилки не буде, інакше він поверне помилку.
+
+ //Callback
+const doSomething = callback => {
+  setTimeout(() => {
+    const skills = ['HTML', 'CSS', 'JS']
+    callback('It did not go well', skills)
+  }, 2000)
+}
+
+const callback = (err, result) => {
+  if (err) {
+    return console.log(err)
+  }
+  return console.log(result)
+}
+
+doSomething(callback)
+
+// after 2 seconds it will print
+It did not go well
+
+
+Конструктор обіцянок
+Ми можемо створити обіцянку за допомогою конструктора Promise. Ми можемо створити нову обіцянку,
+ використовуючи ключове слово, new за яким йде слово Promise та кругла дужка. У дужках вона приймає callback функцію. 
+Функція зворотного виклику promise має два параметри, які є функціями resolve і reject.
+
+
+API Fetch
+Fetch API надає інтерфейс для отримання ресурсів (включно з мережею). 
+Він здасться знайомим кожному, хто використовував XMLHttpRequest, але новий API надає більш потужний і гнучкий набір функцій.
+ У цьому випробуванні ми будемо використовувати fetch для запиту URL-адреси та APIS. 
+ На додаток до цього, давайте розглянемо приклади використання промісів для доступу до мережевих ресурсів за 
+допомогою API отримання.
+
+const url = 'https://restcountries.com/v2/all' // countries api
+fetch(url)
+  .then(response => response.json()) // accessing the API data as JSON
+  .then(data => {
+    // getting the data
+    console.log(data)
+  })
+  .catch(error => console.error(error)) // handling error if something wrong happens
+
+
+За допомогою функции async мы отримуємо обіцянку
+А потім через функцию await ми отримуємо значення з async
+Одно без одного не можуть існувати
+Приклад:
+
+const fetchData = async () => {
+  try {
+    const response = await fetch(url)
+    const countries = await response.json()
+    console.log(countries)
+  } catch (err) {
+    console.error(err)
+  }
+}
+console.log('===== async and await')
+fetchData()
