@@ -201,4 +201,197 @@ ulElements.appendChild(liMachineLearning);
 
 // styles
 ulElements.style.fontSize = `0.7rem`;
-ulElements.style.marginTop = `0.1rem`
+ulElements.style.marginTop = `0.1rem`;
+ulElements.style.marginBottom = `0.2rem`
+
+// h2 elements
+const h2Elements = document.createElement(`h2`);
+wrapper.appendChild(h2Elements);
+// styles
+h2Elements.textContent = `Oleksandr Gladkoskok`;
+h2Elements.style.marginTop = `0.2rem`;
+h2Elements.style.marginBottom = `0.2rem`;
+h2Elements.style.fontSize = `1.5rem`;
+h2Elements.style.fontWeight = `600`
+
+// social links
+const socialLinks = [
+    {
+      social: 'Discord',
+      url: 'https://www.discord.com',
+      fontawesomeIcon: '<i class="fa-brands fa-discord"></i>'
+    },
+    {
+      social: 'Twitter',
+      url: 'https://twitter.com',
+      fontawesomeIcon: '<i class="fab fa-twitter-square"></i>'
+    },
+    {
+      social: 'Github',
+      url: 'https://github.com/Oleksandr1317',
+      fontawesomeIcon: '<i class="fa-brands fa-github"></i>'
+    }
+  ];
+
+// Container for social links
+const divSocialLinkContainer = document.createElement(`div`);
+wrapper.appendChild(divSocialLinkContainer);
+divSocialLinkContainer.style.marginTop = `0.2rem`
+
+socialLinks.forEach(link => {
+    const socialLinkElement = document.createElement(`a`);
+    socialLinkElement.href = link.url;
+    socialLinkElement.className = `social-link`;
+    socialLinkElement.innerHTML = link.fontawesomeIcon;
+    socialLinkElement.title = link.social;
+    divSocialLinkContainer.appendChild(socialLinkElement)
+
+    socialLinkElement.style.color = `black`;
+    socialLinkElement.style.padding = `0rem 0.3rem 0rem 0.3rem`;
+    socialLinkElement.style.fontSize = `1.4rem`;
+});
+
+let bio =  'These are some of my first mini JS projects. And there should be some information here. So I decided to paste it here.';
+
+const pBio = document.createElement(`p`);
+wrapper.appendChild(pBio);
+// styles
+pBio.textContent = bio;
+pBio.style.fontSize = `0.7rem`;
+pBio.style.textAlign = `center`;
+
+const aboutMeContainer = document.createElement(`div`);
+wrapper.appendChild(aboutMeContainer);
+
+aboutMeContainer.style.fontSize = `0.8rem`
+
+let author = {
+    firstName: 'Oleksandr',
+    lastName: 'Gladkoskok',
+    titles: [
+      ['🌱', 'Student'],
+      ['💻', 'Programmer'],
+      ['🌐', 'Developer'],
+    ]};
+
+const titlesElement = document.createElement(`div`);
+titlesElement.textContent = `Titles`;
+aboutMeContainer.appendChild(titlesElement);
+
+author.titles.forEach(title => {
+    const titleElement = document.createElement(`div`);
+    titleElement.textContent = `${title[0]} ${title[1]}`;
+    titlesElement.appendChild(titleElement);
+    titleElement.style.fontSize = `0.77rem`;
+    titlesElement.style.marginLeft = `1.4rem`
+})
+
+const skills = [
+    'Web Development',
+    'Programming',
+    'Databases',
+];
+
+const skillsCont = document.createElement(`div`);
+aboutMeContainer.appendChild(skillsCont);
+
+skillsCont.textContent = `Skills`;
+
+skills.forEach(skill => {
+    const skillElement = document.createElement(`div`);
+    skillElement.innerHTML = '<span style="color: green;">&#9989;</span> ' + skill;
+    skillsCont.appendChild(skillElement);
+    skillElement.style.fontSize = `0.77rem`;
+    skillsCont.style.marginLeft = `1.4rem`
+})
+
+const Couse = [
+    'C# course',
+    'Asp.net mvc course',
+    'SQL course',
+    'HTML CSS course'];
+
+const quaCont = document.createElement(`div`);
+aboutMeContainer.appendChild(quaCont);
+
+quaCont.textContent = `Course completed`;
+
+Couse.forEach(c => {
+    const coursElement = document.createElement(`div`);
+    coursElement.innerHTML = `<span>&#9745;</span>` +  ` ${c}`;
+    quaCont.appendChild(coursElement);
+    coursElement.style.fontSize = `0.77rem`
+    quaCont.style.marginLeft = `1.4rem`
+})
+
+aboutMeContainer.style.display = `flex`;
+aboutMeContainer.style.justifyContent = `space-between`;
+
+let keywords = [
+    'HTML',
+    'HTML5',
+    'CSS',
+    'CSS3',
+    'JS',
+    'JavaScript',
+    'ES6',
+    'Promise',
+    'async await',
+    'Database',
+    'React',
+    'React Hooks',
+    'Context API',
+    'React Router',
+    'Web Storage',
+    'localStorage',
+    'sessionStorage',
+    'Redux',
+    'Node',
+    'MongoDB',
+    'SQL',
+    'API',
+    'DOM',
+    'data science',
+    'MERN',
+    'Python',
+    'Flask',
+    'Statistics',
+    'Linear Algebra',
+    'Numpy',
+    'Pandas',
+    'Scipy',
+    'Scikit-learn',
+    'Visualization',
+    'D3.js'
+  ];
+
+  const pKey = document.createElement(`p`);
+  wrapper.appendChild(pKey);
+  pKey.textContent = `Keywords`;
+  pKey.style.display = `flex`;
+  pKey.style.textAlign = `left`;
+  pKey.style.width = `36rem`
+
+  const keywordsContainer = document.createElement(`div`);
+  wrapper.appendChild(keywordsContainer);
+
+  keywords.forEach(key => {
+    const keyElement = document.createElement(`div`);
+    keyElement.textContent = `# ${key}`;
+    keyElement.style.fontStyle = `italic`
+    const keywordsColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+    keyElement.style.backgroundColor = keywordsColor;
+    keywordsContainer.appendChild(keyElement);
+    keyElement.style.borderRadius = `0.4rem`
+    keyElement.style.textAlign = `center`
+    keyElement.style.padding = `0.1rem 0.3rem 0.1rem 0.2rem`;
+    keyElement.style.margin = `0.2rem 0.2rem 0.3rem 0.2rem`
+    keyElement.style.fontSize = `0.78rem`;
+    keyElement.style.fontWeight = `600`
+ } )
+
+ keywordsContainer.style.display = `flex`;
+ keywordsContainer.style.width = `35rem`;
+ keywordsContainer.style.height = `auto`;
+ keywordsContainer.style.flexWrap = `wrap`;
+ keywordsContainer.style.fontFamily = `sans-serif`
