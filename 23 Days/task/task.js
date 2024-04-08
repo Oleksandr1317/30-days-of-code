@@ -12,6 +12,8 @@ const h1Elements = document.createElement(`h1`);
 containerDiv.appendChild(h1Elements);
 h1Elements.id = `title`;
 // styles
+h1Elements.style.fontSize = `2.2rem`;
+h1Elements.style.color = `rgb(104,200,109)`
 h1Elements.textContent = `Number Generator`;
 h1Elements.style.margin = `0.3rem auto 0.5rem`;
 
@@ -20,7 +22,6 @@ containerDiv.appendChild(pElements);
 pElements.id = `NameOfCourse`;
 // styles
 pElements.textContent = `30DaysOfJavaScript:DOM Day 2`;
-pElements.style.textDecoration = `underline`;
 pElements.style.fontSize = `1rem`
 pElements.style.margin = `0.1rem auto`;
 
@@ -29,9 +30,8 @@ containerDiv.appendChild(pAuthor);
 pAuthor.id = `authorP`;
 // styles
 pAuthor.textContent = `Author: Oleksandr`;
-pAuthor.style.textDecoration = `underline`;
 pAuthor.style.margin = `0.1rem auto 1rem`;
-pAuthor.style.fontSize = `0.7rem`
+pAuthor.style.fontSize = `0.8rem`
 pAuthor.style.fontWeight = `100`
 
 // INPUT/BUTTON element
@@ -67,9 +67,6 @@ divNumbers.id = `numbers-container`;
 divNumbers.style.display = `flex`;
 divNumbers.style.width = `50rem`;
 divNumbers.style.flexWrap = `wrap`
-// divNumbers.style.gridTemplateColumns = `repeat(9, calc(16.666% - 65px))`; 
-// divNumbers.style.gridGap = `10px`;
-// divNumbers.style.gridRowGap = `2px`
 
 generateButton.addEventListener('click',() => {
 
@@ -91,15 +88,16 @@ generateButton.addEventListener('click',() => {
         cell.style.boxSizing = `border-box`;
         cell.style.fontSize = `2.2rem`
         cell.style.margin = `2px`
+        cell.style.borderRadius = `0.17rem`
     
         if (i % 2 === 0) {
             cell.style.backgroundColor = `rgb(104,200,109)`;
         } else {
-            cell.style.backgroundColor = `rgb(245, 224, 93)`;
+            cell.style.backgroundColor = `rgb(230,195,81)`;
         }
     
         if (isPrime(i)) {
-            cell.style.backgroundColor = `rgb(255, 59, 59)`;
+            cell.style.backgroundColor = `rgb(230,89,89)`;
         }
         cell.classList.add(`cell`);
         // styles
