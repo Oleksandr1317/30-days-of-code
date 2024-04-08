@@ -64,10 +64,12 @@ const divNumbers = document.createElement(`div`);
 containerDiv.appendChild(divNumbers);
 divNumbers.id = `numbers-container`;
 // styles
-divNumbers.style.display = `grid`;
-divNumbers.style.gridTemplateColumns = `repeat(9, calc(16.666% - 65px))`; 
-divNumbers.style.gridGap = `10px`;
-divNumbers.style.gridRowGap = `2px`
+divNumbers.style.display = `flex`;
+divNumbers.style.width = `50rem`;
+divNumbers.style.flexWrap = `wrap`
+// divNumbers.style.gridTemplateColumns = `repeat(9, calc(16.666% - 65px))`; 
+// divNumbers.style.gridGap = `10px`;
+// divNumbers.style.gridRowGap = `2px`
 
 generateButton.addEventListener('click',() => {
 
@@ -85,10 +87,10 @@ generateButton.addEventListener('click',() => {
         // styles
         cell.style.height = `40px`;
         cell.style.width = `80px`;
-        cell.style.padding = `12px 0 0 0`
+        cell.style.padding = `1px`
         cell.style.boxSizing = `border-box`;
-        cell.style.fontSize = `1rem`
-        cell.style.marginRight = `4px`
+        cell.style.fontSize = `2.2rem`
+        cell.style.margin = `2px`
     
         if (i % 2 === 0) {
             cell.style.backgroundColor = `rgb(104,200,109)`;
