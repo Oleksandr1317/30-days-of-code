@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+		<h1>Calculate a weight of an object on a planet</h1>
+        <div class="calculate-content">
+            <input type="text" id="mass" placeholder="Mass in Kilogram" />
+            <select>
+                <option value='none'>--select planet-- </option>
+            </select>
+            <button>Calculate weight</button>
+        </div>
+	</header>
+	<main>
+		<div class="flex-container">
+			<div class="flex-item image">
+				<img src='./images/earth.png' class="planet-image" />
+			</div>
+			<div class="flex-item description"></div>
+
+		</div>
+	</main>
+</body>
+</html>
