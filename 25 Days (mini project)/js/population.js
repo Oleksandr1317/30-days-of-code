@@ -30,7 +30,7 @@ const createCountryElements = (data,worldPopulation) => {
     container.innerHTML = ''; 
 
     data.forEach(country => {
-        const countryElement = document.createElement('div');
+    const countryElement = document.createElement('div');
     countryElement.classList.add('country');
 
     const name_container = document.createElement('div');
@@ -76,5 +76,5 @@ async function click_in_population() {
     }
 }
 
-const button = document.querySelector(`.population`)
-button.addEventListener(`click`,click_in_population)
+const buttonPopulate = document.querySelector(`.population`)
+buttonPopulate.addEventListener(`click`,click_in_population)
