@@ -5,19 +5,22 @@ body {
 
 header {
     position: relative;
+    background-image: url('../images/globe-2.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 header::before {
     content: "";
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url('../images/globe-2.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(60%) saturate(150%) sepia(30%) hue-rotate(210deg);
+    background-color: rgba(0, 0, 90, 0.33);
+    z-index: 1;
   }
 
 .header-inside {
@@ -27,6 +30,7 @@ header::before {
     justify-content: center;
     align-items: center;
     color: white;
+    z-index: 2;
 }
 
 .main-title {
@@ -91,3 +95,44 @@ header::before {
     align-items: center;
 }
 
+.countries-cards {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-country {
+    position: relative;
+    background-image: url('../images/map_image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    margin: 0.4rem 2rem 0.5rem 2rem;    
+}
+
+.card-country::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 90, 0.33);
+    border-radius: 0.5rem;
+    z-index: 1; 
+}
+
+.country-name-card {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    text-align: center;
+    z-index: 2;
+    color:white;
+}
