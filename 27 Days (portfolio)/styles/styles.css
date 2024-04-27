@@ -1,0 +1,55 @@
+body {
+    font-family: 'Poppins',sans-serif;
+}
+
+.header-inside {
+    margin-left: 8rem;
+}
+
+.main-data {
+    font-size: 4rem;
+    font-weight: normal;
+    letter-spacing: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.programming-languages {
+    width: 75rem;
+    height: 5rem;
+    background-color: rgb(255, 240, 207);
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.icon-content-language {
+    margin-left: 1.4rem;
+    font-size: 2rem;
+}
+
+.text-animation {
+    position: relative;
+    animation-duration: 2.4s;
+    animation-name: slidein;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+  }
+
+  .programming-languages:hover .text-animation {
+    animation-play-state: paused;
+  }
+  
+@keyframes slidein {
+    0%{
+      left: 0;
+      opacity: 0;
+    }
+    35%{
+        opacity: 1;
+    }
+    100%{
+      left: 30px;
+      opacity: 0;
+    }
+  }
