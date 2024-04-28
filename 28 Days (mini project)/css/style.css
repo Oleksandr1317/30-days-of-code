@@ -18,9 +18,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .user-input {
-    width: 8rem;
-    height: 2rem;
-    font-size: 1.1rem;
+    width: 10rem;
+    height: 2.2rem;
+    font-size: 1.4rem;
     padding-left: 0.5rem;
     margin-right: 0.1rem;
     border: solid 1px rgb(255, 176, 176);
@@ -29,7 +29,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #add-button {
     font-size: 1.1rem;
     width: 8rem;
-    height: 2.2rem;
+    height: 2.4rem;
     background-color: rgb(255, 176, 176);
     border: none;
     color: white;
@@ -40,4 +40,51 @@ form {
     flex-direction: row;
     justify-content: center;
     gap: 0.2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.main-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+    background-color: rgb(255, 176, 176);
+    border-radius: 0.3rem;
+    width: 52rem;
+}
+
+.navigation-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#delete-card,#plusFive,#minusFive {
+    border-radius: 50%;
+    background-color: azure;
+    width: 2.88rem;
+    height: 2.88rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#CurrentTime {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    color: gray;
+}
+
+#PlayerName {
+    letter-spacing: 0.4rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
 }
