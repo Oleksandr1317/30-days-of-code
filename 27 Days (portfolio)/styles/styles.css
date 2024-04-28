@@ -20,6 +20,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
+    border-radius: 0.1rem;
 }
 
 .icon-content-language {
@@ -34,22 +35,62 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-delay: 1s;
-  }
+}
 
-  .programming-languages:hover .text-animation {
+.programming-languages:hover .text-animation {
     animation-play-state: paused;
-  }
+}
+
+main {
+  margin-left: 8rem;
+}
+
+#span-text-content {
+    font-weight: bold;
+}
+
+.project-cards {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 5rem;
+  width: 75rem;
+}
+
+.project-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 13rem;
+  height: 8rem;
+  background-color: rgb(241, 241, 241);
+  cursor: pointer;
+  border-radius: 0.2rem;
+  font-size: 1.4rem;
+}
+
+.project-card:hover {
+  background-color: rgb(217, 217, 217);
+  width: 13.2rem;
+  height: 8.2rem;
+  font-size: 1.44rem;
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.5);
+}
+
   
 @keyframes slidein {
     0%{
       left: 0;
       opacity: 0;
     }
-    35%{
+    45%{
         opacity: 1;
     }
     100%{
       left: 30px;
       opacity: 0;
     }
-  }
+}
