@@ -1,0 +1,43 @@
+body {
+    font-family: 'Poppins',sans-serif;
+}
+
+.header-inside {
+    display: flex;
+    justify-content: center;
+}
+
+#main-title {
+    font-size: 1.5rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.user-input {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    margin-right: 0.1rem;
+    border: solid 1px rgb(255, 176, 176);
+}
+
+#add-button {
+    font-size: 1.1rem;
+    width: 8rem;
+    height: 2.2rem;
+    background-color: rgb(255, 176, 176);
+    border: none;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.2rem;
+}

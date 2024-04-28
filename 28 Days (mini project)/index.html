@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <header>
+        <div class="header-inside">
+            <h1 id="main-title">30 Days of JavaScript Challenge Leaderboard</h1>
+        </div>
+        <div class="user-input-data">
+            <form>
+                <input class="user-input" type="text" id="firstName" name="FirstName" placeholder="First Name" required>
+                <input class="user-input" type="text" id="lastName" name="LastName" placeholder="Last Name" required>
+                <input class="user-input" type="text" id="country" name="country" placeholder="Country" required>
+                <input class="user-input" type="number" id="score" name="score" placeholder="Player score" min="1" max="100" required>
+                <button id="add-button" type="submit">Add Player</button>
+            </form>
+        </div>
+    </header>
+    <main></main>
+    <script src='./js/main.js'></script>
+</body>
+</html>
