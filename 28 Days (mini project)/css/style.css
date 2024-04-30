@@ -52,8 +52,9 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5rem;
-    background-color: rgb(255, 176, 176);
+    justify-content: center;
+    gap: 8rem;
+    background-color: rgb(255, 192, 192);
     border-radius: 0.3rem;
     width: 52rem;
 }
@@ -66,6 +67,10 @@ main {
     gap: 0.3rem;
 }
 
+#delete-card {
+    color: red;
+}
+
 #delete-card,#plusFive,#minusFive {
     border-radius: 50%;
     background-color: azure;
@@ -75,6 +80,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    cursor: pointer;
+    user-select: none;
 }
 
 #CurrentTime {
@@ -87,4 +94,14 @@ main {
     letter-spacing: 0.4rem;
     font-size: 1.2rem;
     margin-bottom: 0.4rem;
+}
+
+#leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-entry {
+    margin-bottom: 0.7rem;
 }
