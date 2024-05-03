@@ -1,0 +1,43 @@
+.text {
+    font-size: 5rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
+}
+
+.container-for-text {
+    margin-top: 0rem;
+    background-color: bisque;
+    height: 39.5rem;
+    border-radius: 0.2rem;
+    padding-top: 5rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: backgroundColorChange 8s infinite alternate;
+}
+
+@keyframes backgroundColorChange {
+    0% {
+        background-color: aquamarine;
+    }
+    50% {
+        background-color: blueviolet;
+    }
+    100% {
+        background-color: gray;
+    }
+}
+
+.text span {
+    animation: colorChange 4s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: blue;
+    }
+    50% {
+        color: red;
+    }
+    100% {
+        color: green;
+    }
+}
