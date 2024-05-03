@@ -1,0 +1,75 @@
+.validation-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.validation-div {
+    font-family: 'Montserrat',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.validation-div h1 {
+    color: rgb(76, 73, 73);
+}
+
+.validation-form label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgb(65, 65, 65);
+}
+
+.input-element {
+    padding: 0.3rem 0rem 0.3rem 0.7rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+    width: 100%;
+    border-color: rgba(101, 101, 101, 0.3);
+    font-weight: 600;
+    color: rgb(69, 69, 69);
+}
+
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.input-wrapper button {
+    color: rgb(102, 102, 102);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.input-element[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+#submit-button {
+    width: 20%;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: 0.4rem;
+    color: white;
+    background-color: rgb(73, 73, 73);
+}
+
+.error-message {
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto 0.7rem auto;
+}
