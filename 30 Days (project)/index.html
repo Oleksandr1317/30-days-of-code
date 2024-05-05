@@ -44,82 +44,113 @@
     </div>
     
     <script>
-        function togglePasswordVisibility() {
-            var passwordField = document.getElementById("password");
-            var buttonEye = document.getElementById("eyeButton");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                buttonEye.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`
-            } else {
-                passwordField.type = "password";
-                buttonEye.innerHTML = `<i class="fa-solid fa-eye"></i>`
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputs = document.querySelectorAll('.input-element');
+            inputs.forEach(function(input) {
+                input.addEventListener('input', function() {
+                    validateInput(input);
+                });
+            });
+        });
 
-        function validateForm() {
-            var firstName = document.getElementById("firstname").value;
-            var lastName = document.getElementById("lastname").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var telephone = document.getElementById("telephone").value;
-            var bio = document.getElementById("bio").value;
-
-            var firstNameError = document.getElementById("firstnameError");
-            var lastNameError = document.getElementById("lastnameError");
-            var emailError = document.getElementById("emailError");
-            var passwordError = document.getElementById("passwordError");
-            var telephoneError = document.getElementById("telephoneError");
-            var bioError = document.getElementById("bioError");
-
+        var count = 0;
+    
+        function validateInput(input) {
+            var value = input.value.trim();
+            var errorElement = document.getElementById(input.id + 'Error');
             var isValid = true;
 
-            if (firstName.length < 3 || firstName.length > 16) {
-                firstNameError.innerHTML = "First name must be alphanumeric and contain 3-16 characters";
-                isValid = false;
-            } else {
-                firstNameError.innerHTML = "";
-            }
 
-            if (lastName.length < 3 || lastName.length > 16) {
-                lastNameError.innerHTML = "Last name must be alphanumeric and contain 3-16 characters";
-                isValid = false;
-            } else {
-                lastNameError.innerHTML = "";
+            switch (input.id) {
+                case 'firstname':
+                    if (value.length < 3 || value.length > 16) {
+                        errorElement.innerHTML = "First Name must be alphanumeric and contain 3-16 characters";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++;
+                    }
+                    break;
+                case 'lastname':
+                    if (value.length < 3 || value.length > 16) {
+                        errorElement.innerHTML = "Last Name must be alphanumeric and contain 3-16 characters";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++
+                    }
+                    break;
+                case 'email':
+                    if (!validateEmail(value)) {
+                        errorElement.innerHTML = "Email must be a valid address, e.g. example@example.com";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++
+                    }
+                    break;
+                case 'password':
+                    if (value.length < 6 || value.length > 20) {
+                        errorElement.innerHTML = "Password must be alphanumeric and between 6-20 characters";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++
+                    }
+                    break;
+                case 'telephone':
+                    if (value.length !== 10) {
+                        errorElement.innerHTML = "Telephone must be a valid 10-digit number";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++
+                    }
+                    break;
+                case 'bio':
+                    if (value.length < 8 || value.length > 30) {
+                        errorElement.innerHTML = "Bio must contain only lowercase letters, underscores, hyphens and be 8-30 characters";
+                        isValid = false;
+                    } else {
+                        errorElement.innerHTML = "";
+                        count++
+                    }
+                    break;
+                default:
+                    break;
             }
+    
+            input.style.border = isValid ? "solid green" : "solid red";
 
-            if (!validateEmail(email)) {
-                emailError.innerHTML = "Email must be a valid address, e.g. example@example.com";
-                isValid = false;
-            } else {
-                emailError.innerHTML = "";
-            }
-
-            if (password.length < 6 || password.length > 20) {
-                passwordError.innerHTML = `Password must be alphanumeric (@ , _ and - are also allowed) and between 3-16 characters`
-                isValid = false
-            } else {
-                passwordError.innerHTML = "";
-            }
-
-            if (telephone.length != 10) {
-                telephoneError.innerHTML = `A valid Telephone number (10 digits) 333-333-3334`
-                isValid = false
-            } else {
-                telephoneError.innerHTML = "";
-            }
-
-            // ДОДЕЛАТЬ
-            if (bio.length < 8 || bio.length > 30) {
-                bioError.innerHTML = ""
-            }
-
+            var button = document.querySelector(`#submit-button`);
+            button.style.backgroundColor = count === 6 ? `green` : ``;
+    
             return isValid;
         }
-
+    
         function validateEmail(email) {
             var re = /\S+@\S+\.\S+/;
             return re.test(email);
         }
-    </script>
+    
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var buttonEye = document.getElementById("eyeButton");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+            buttonEye.innerHTML = passwordField.type === "password" ? `<i class="fa-solid fa-eye"></i>` : `<i class="fa-solid fa-eye-slash"></i>`;
+        }
+    
+        function validateForm() {
+            var inputs = document.querySelectorAll('.input-element');
+            var isValid = true;
+            inputs.forEach(function(input) {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+    
+            return isValid;
+        }
+    </script>    
 </body>
 </html>
