@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/b5ba6f6258.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="validation-div">
+        <h1>Validation Web Forms</h1>
+        <form class="validation-form" onsubmit="return validateForm()">
+            <label for="firstname">First Name</label>
+            <input class="input-element" type="text" id="firstname" name="firstname" required>
+            <div class="error-message" id="firstnameError" class="error-message"></div>
+
+            <label for="lastname">Last Name</label>
+            <input class="input-element" type="text" id="lastname" name="lastname" required>
+            <div class="error-message" id="lastnameError" class="error-message"></div>
+
+            <label for="email">Email</label>
+            <input class="input-element" type="email" id="email" name="email" required>
+            <div class="error-message" id="emailError" class="error-message"></div>
+
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+                <input class="input-element" type="password" id="password" name="password" required>
+                <button id="eyeButton" type="button" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <div class="error-message" id="passwordError" class="error-message"></div>
+
+            <label for="telephone">Telephone</label>
+            <input class="input-element" type="number" id="telephone" name="telephone" required>
+            <div class="error-message" id="telephoneError" class="error-message"></div>
+
+            <label for="bio">Your bio</label>
+            <input class="input-element" type="text" id="bio" name="bio" required>
+            <div class="error-message" id="bioError" class="error-message"></div>
+
+            <button id="submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script src="./js/main.js"></script>    
+</body>
+</html>

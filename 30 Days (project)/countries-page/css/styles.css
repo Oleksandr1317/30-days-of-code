@@ -1,0 +1,88 @@
+body {
+    font-family: 'Montserrat',sans-serif;
+}
+
+.main-header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.4rem;
+}
+
+.main-header-text:hover {
+    transform: skewX(0.9deg);
+}
+
+.header-input-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 2px -1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-input-navigation:hover {
+    box-shadow: 6px -4px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(247, 247, 247);
+    transform: skewX(0.5deg);
+}
+
+.input-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#country-name {
+    width: 35rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(159, 159, 159);
+    color: rgb(255, 187, 60);
+    padding-left: 0.7rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.navigation-buttons {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.n-button{
+    padding: 0.5rem 2.5rem 0.5em 2.5rem;
+    border-radius: 0.7rem;
+    font-weight: bold;
+    font-size: 0.77rem;
+    border: none;
+    background-color: rgb(255, 187, 60);
+    cursor: pointer;
+}
+
+#statistic-button {
+    font-size: 1.7rem;
+    color: rgb(255, 187, 60);
+    cursor: pointer;
+}
+
+#about-page-text {
+    font-weight: bold;
+    color: rgb(255, 187, 60);
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.3rem;
+}
+
+#paragraph-abount-count-country {
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+#found-count-country {
+    color: orange;
+    margin-top: 0.2rem;
+}
+
