@@ -33,7 +33,7 @@ body {
     margin-top: 1rem;
 }
 
-#country-name {
+#country-name-input {
     width: 35rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -86,3 +86,57 @@ body {
     margin-top: 0.2rem;
 }
 
+.countries-card {
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 2px -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.country-card {
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 0.2rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(251, 251, 251);
+    margin: 1rem 0.2rem;
+
+    
+}
+
+#country-flag {
+    width: 6.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.2rem;
+    margin: 1rem 0 0.1rem 0;
+    text-align: center;
+}
+
+#country-name {
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: rgb(255, 187, 60);
+}
+
+#country-capital,#country-population,#country-languages {
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+    word-wrap: break-word;
+}
+
+#header-in-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-in-card {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
