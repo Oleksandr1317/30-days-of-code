@@ -39,6 +39,10 @@ function createCard(countries) {
         main.appendChild(capital);
         main.appendChild(languages);
         main.appendChild(population);
+
+        if (value.population == 0) {
+            cardDiv.style.display = `none`
+        } 
     });
 }
 
